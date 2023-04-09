@@ -1,0 +1,14 @@
+Task 3 queries:
+
+- show dbs
+- use casestudy_wasim
+- show collections
+
+a. List the vehicles with all the fields which have the cylinders more than or equal to 5
+- db.car_data.find({cylinders: {$gte: 5}})
+b. List the vehicles with all the fields those have 18 miles per gallon (mpg) and weigh (weight) more than or equal to 3500
+- db.car_data.find({mpg: 18, weight: {$gte: 3500}})
+c. Update the vehicles with acceleration to 8 those weighs more than or equal to 3500
+- db.car_data.updateMany({weight: {$gte: 3500}}, {$set: {acceleration: 8}})
+d. List the vehicles with the field’s horsepower, displacement those have cylinders more than or equal to 4
+- db.car_data.find({cylinders: {$gte: 4}}, {horsepower: 1, displacement: 1})
